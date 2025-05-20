@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Compiler - Terminal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/theme/twilight.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="terminal-window">
+    <div class="title-bar">
+            <span class="buttons">
+                <span class="button close"></span>
+                <span class="button minimize"></span>
+                <span class="button maximize"></span>
+            </span>
+        <span class="title">BlackMoon #Compiler</span>
+    </div>
+    <div class="terminal-content">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-md-4 col-12">
+                    <select id="languageSelect" class="form-control">
+                        <option value="python">Python</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                    </select>
+                </div>
+                <div class="col-md-4 col-12">
+                    <button id="runButton" class="btn btn-success">Run Code</button>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6 col-12">
+                    <label for="editorFontSize">Editor Font Size: <span id="editorFontSizeValue">21</span>px</label>
+                    <input type="range" id="editorFontSize" min="10" max="30" value="21">
+                </div>
+                <div class="col-md-6 col-12">
+                    <label for="terminalFontSize">Terminal Font Size: <span id="terminalFontSizeValue">24</span>px</label>
+                    <input type="range" id="terminalFontSize" min="10" max="30" value="24">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-12">
+                    <h3>Code Editor</h3>
+                    <textarea id="codeEditor"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Terminal</h3>
+                    <div class="terminal" tabindex="0">
+                        <pre id="terminal-output"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/clike/clike.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
